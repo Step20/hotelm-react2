@@ -48,7 +48,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.listen(process.env.PORT || 8800, () => {
+app.listen(8800, () => {
   connect();
-  console.log("Server is running on port", process.env.PORT);
+  console.log("Connected to backend.");
 });
