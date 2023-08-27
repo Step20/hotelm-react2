@@ -26,10 +26,9 @@ mongoose
   });
 
 if (process.env.NODE_ENV === "production") {
-  console.log("this is the message");
   app.use(express.static("client/build"));
   app.get("*", (req, res) => {
-    res.sendFile(__dirname, "client", "public", "index.html");
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
   });
 }
 
