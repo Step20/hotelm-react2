@@ -17,7 +17,7 @@ app.use("/api/hotels", hotelsRoute);
 
 mongoose.set("strictQuery", false);
 mongoose
-  .connect(process.env.MONGODB_URL)
+  .connect(process.env.MONGO)
   .then(() => {
     console.log("Connected to MongoDB");
   })
@@ -34,6 +34,5 @@ if (process.env.NODE_ENV === "production") {
 
 const PORT = process.env.PORT || 8800;
 app.listen(PORT, () => {
-  connect();
   console.log("Connected to backend.");
 });
