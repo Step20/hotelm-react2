@@ -28,7 +28,7 @@ mongoose
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   app.get("*", (req, res) => {
-    res.sendFile("index.html", { root: __dirname });
+    res.sendFile(__dirname, "/client/index.html");
   });
 }
 
