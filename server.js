@@ -15,6 +15,7 @@ app.use(express.json());
 
 app.use("/api/hotels", hotelsRoute);
 
+mongoose.set("strictQuery", false);
 const connect = async () => {
   try {
     await mongoose.connect(process.env.MONGO);
