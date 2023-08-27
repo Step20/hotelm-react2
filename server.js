@@ -15,14 +15,14 @@ app.use(express.json());
 
 app.use("/api/hotels", hotelsRoute);
 
-mongoose
-  .connect(process.env.MONGO)
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+const connect = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO);
+    console.log("Connected to mongoDB.");
+  } catch (error) {
+    throw error;
+  }
+};
 
 mongoose.connection.on("disconnected", () => {
   console.log("mongoDB disconnected!");
@@ -46,7 +46,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log("Server is running on port", PORT);
+app.listen(5000, () => {
+  connect();
+  console.log("Connected to backend.");
 });
