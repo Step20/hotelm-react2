@@ -1,10 +1,8 @@
 require("dotenv").config();
-
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const hotelsRoute = require("./routes/hotels");
-
 const path = require("path");
 const cookieParser = require("cookie-parser");
 
@@ -33,7 +31,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const PORT = process.env.PORT || 8800;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log("Server is running on port", PORT);
 });
