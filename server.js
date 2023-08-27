@@ -28,7 +28,7 @@ const connect = async () => {
 app.use(express.static(__dirname));
 // send the user to index html page inspite of the url
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "index.html"));
+  res.sendFile(path.join("client", "index.html"));
 });
 
 const PORT = process.env.PORT || 8800;
