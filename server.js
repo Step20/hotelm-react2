@@ -16,14 +16,14 @@ app.use(express.json());
 app.use("/api/hotels", hotelsRoute);
 
 mongoose.set("strictQuery", false);
-const connect = async () => {
-  try {
-    await mongoose.connect(process.env.MONGO);
-    console.log("Connected to mongoDB.");
-  } catch (error) {
-    throw error;
-  }
-};
+mongoose
+  .connect(process.env.MONGODB_URL)
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
