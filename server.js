@@ -24,8 +24,7 @@ const connect = async () => {
     throw error;
   }
 };
-
-app.use(express.static(__dirname));
+app.use(express.static("client/build"));
 // send the user to index html page inspite of the url
 app.get("*", (req, res) => {
   res.sendFile(path.join("client", "index.html"));
