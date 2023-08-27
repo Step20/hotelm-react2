@@ -43,7 +43,7 @@ app.use((err, req, res, next) => {
 app.use(express.static(__dirname));
 // send the user to index html page inspite of the url
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 const PORT = process.env.PORT || 8800;
