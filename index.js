@@ -9,6 +9,14 @@ import cors from "cors";
 const app = express();
 dotenv.config();
 
+//middlewares
+app.use(cors());
+app.use(cookieParser());
+app.use(express.json());
+
+app.use("/api/hotels", hotelsRoute);
+app.use("/api/rooms", roomsRoute);
+
 const connect = async () => {
   try {
     await mongoose.connect(process.env.MONGO);
@@ -21,14 +29,6 @@ const connect = async () => {
 mongoose.connection.on("disconnected", () => {
   console.log("mongoDB disconnected!");
 });
-
-//middlewares
-app.use(cors());
-app.use(cookieParser());
-app.use(express.json());
-
-app.use("/api/hotels", hotelsRoute);
-app.use("/api/rooms", roomsRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
@@ -48,7 +48,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.listen(8800, () => {
-  connect();
-  console.log("Connected to backend.");
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log("Server is running on port", PORT);
 });
