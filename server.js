@@ -10,19 +10,19 @@ const app = express();
 
 //middlewares
 app.use(cors());
-app.use(cookieParser());
 app.use(express.json());
 
 app.use("/api/hotels", hotelsRoute);
+
 mongoose.set("strictQuery", false);
-const connect = async () => {
-  try {
-    await mongoose.connect(process.env.MONGO);
-    console.log("Connected to mongoDB.");
-  } catch (error) {
-    throw error;
-  }
-};
+mongoose
+  .connect(process.env.MONGO)
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 mongoose.connection.on("disconnected", () => {
   console.log("mongoDB disconnected!");
@@ -46,7 +46,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.listen(8800, () => {
-  connect();
-  console.log("Connected to backend.");
+const PORT = process.env.PORT || 8800;
+app.listen(PORT, () => {
+  console.log("Server is running on port", PORT);
 });
