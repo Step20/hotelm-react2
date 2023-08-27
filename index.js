@@ -10,15 +10,6 @@ import cors from "cors";
 const app = express();
 dotenv.config();
 
-const connect = async () => {
-  try {
-    await mongoose.connect(process.env.MONGO);
-    console.log("Connected to mongoDB.");
-  } catch (error) {
-    throw error;
-  }
-};
-
 mongoose.connection.on("disconnected", () => {
   console.log("mongoDB disconnected!");
 });
@@ -41,6 +32,15 @@ app.use((err, req, res, next) => {
     stack: err.stack,
   });
 });
+
+const connect = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO);
+    console.log("Connected to mongoDB.");
+  } catch (error) {
+    throw error;
+  }
+};
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
