@@ -2,13 +2,13 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server",
   "engines": {
     "node": "16.13.2"
   },
   "scripts": {
-    "start": "node index.js",
-    "server": "nodemon index.js",
+    "start": "node server",
+    "server": "nodemon server",
     "client": "cd client && npm run start",
     "client-install": "cd client && npm install",
     "server-install": "npm install",
