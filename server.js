@@ -26,7 +26,11 @@ mongoose
   });
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use("/static", express.static(path.join(__dirname, "build/static")));
+  app.use(
+    "/manifest.json",
+    express.static(path.join(__dirname, "build", "manifest.json"))
+  );
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
   });
