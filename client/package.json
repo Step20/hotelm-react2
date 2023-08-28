@@ -32,7 +32,8 @@
     "react-visibility-sensor": "^5.1.1",
     "reactstrap": "^9.1.9",
     "sass": "^1.66.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.0"
   },
   "scripts": {
     "start": "react-scripts start",
