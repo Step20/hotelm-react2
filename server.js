@@ -13,6 +13,15 @@ app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
+// get directory where is index.html
+const root = path.join(__dirname, "client", "build");
+//express.use static with the directory
+app.use(express.static(root));
+//express get request any (*) root, please use file that is on root directory configure above.
+app.get("*", (req, res) => {
+  res.sendFile("index.html", { root });
+});
+
 app.use("/api/hotels", hotelsRoute);
 
 mongoose.set("strictQuery", false);
@@ -25,19 +34,19 @@ mongoose
     console.log(err);
   });
 
-if (process.env.NODE_ENV === "production") {
-  app.use(
-    "/static",
-    express.static(path.join(__dirname, "client/build/static"))
-  );
-  app.use(
-    "/manifest.json",
-    express.static(path.join(__dirname, "client/build/manifest.json"))
-  );
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-  });
-}
+// if (process.env.NODE_ENV === "production") {
+//   app.use(
+//     "/static",
+//     express.static(path.join(__dirname, "client/build/static"))
+//   );
+//   app.use(
+//     "/manifest.json",
+//     express.static(path.join(__dirname, "client/build/manifest.json"))
+//   );
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+//   });
+// }
 
 const PORT = process.env.PORT || 8800;
 app.listen(PORT, () => {
