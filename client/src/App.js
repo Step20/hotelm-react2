@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route index path="/ " element={<Main />} exact />
+          <Route index path="/" element={<Main />} exact />
           <Route index path="/hotel" element={<Hotel />} exact />
         </Routes>
       </BrowserRouter>
