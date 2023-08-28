@@ -1,0 +1,42 @@
+.suite-out {
+  height: 100vh;
+  display: table;
+  .suite-content {
+    display: table-cell;
+    vertical-align: middle;
+
+    .up {
+      h1 {
+        font-size: calc(1rem + 2vw);
+        font-family: Marko One;
+        .blue {
+          font-family: Marko One;
+          color: #206c5d;
+        }
+      }
+      p {
+        font-size: calc(1rem + 0.6vw);
+      }
+    }
+    .down {
+      .box {
+        img {
+          // width: calc(15rem + 10vw);
+          width: 90%;
+          border-radius: 1vw;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        h3 {
+          margin-top: 1vw;
+          font-family: Marko One;
+        }
+        p {
+          font-size: calc(0.6rem + 0.6vw);
+          width: 85%;
+        }
+      }
+    }
+  }
+}

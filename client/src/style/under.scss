@@ -1,0 +1,49 @@
+.under {
+  width: 100vw;
+  height: 50vh;
+  background: linear-gradient(92deg, #376b5285 30%, #006c6c9b 50%),
+    linear-gradient(360deg, #000 0%, rgba(0, 0, 0, 0) 100%, #000 100%),
+    url("../assets/hmbg.png"), lightgray 50% / cover no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .under-out {
+    height: 50vh;
+    display: table;
+    .under-content {
+      display: table-cell;
+      vertical-align: middle;
+      .row {
+        color: white;
+        .left {
+          h1 {
+            font-size: calc(2rem + 1.7vw);
+            font-family: Marko One;
+          }
+          p {
+            width: 90%;
+            font-weight: 300;
+            opacity: 0.8;
+            font-size: calc(0.2rem + 1vw);
+          }
+        }
+        .right {
+          .btn {
+            float: right;
+            font-size: calc(1rem + 0.9vw);
+            padding: 0.9vw 8vw 0.9vw 8vw;
+            font-weight: 600;
+            border-radius: 1.5vw;
+            border: 1px solid white;
+            background-color: #ffffff29;
+            &:hover {
+              background-color: #ffffff;
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,176 @@
+$bg: #000000;
+$blue: #182ac7;
+$white: #f6f6f6;
+$lbg: #212121;
+$grey: #a4a4a4;
+
+.footer-out {
+  overflow: hidden;
+  background-color: $bg;
+  width: 100%;
+  .footer-group {
+    background-color: $bg;
+    display: table;
+    height: 12vh;
+    width: 85%;
+    .footer-b {
+      display: table-cell;
+      vertical-align: middle;
+      .footer-content {
+        .footer-brand {
+          h1 {
+            color: white;
+            font-weight: 700;
+            font-size: calc(1rem + 1vw);
+            opacity: 1;
+            transition: all 0.3s ease;
+            .light {
+              font-weight: 200;
+            }
+            &:hover {
+              color: $white;
+              transition: all 0.3s ease;
+              cursor: pointer;
+              opacity: 0.7;
+            }
+          }
+        }
+        .footer-text {
+          color: grey;
+
+          ul {
+            margin-top: 0.7vw;
+            li {
+              display: inline;
+              margin-right: 2vw;
+
+              font-weight: bold;
+              opacity: 0.9;
+              font-size: calc(0.3rem + 0.8vw);
+              transition: all 0.3s ease;
+              &:hover {
+                color: white;
+                transition: all 0.3s ease;
+                cursor: pointer;
+                opacity: 1;
+              }
+            }
+          }
+        }
+        .footer-icons {
+          color: white;
+
+          ul {
+            margin-top: 0.5vw;
+            li {
+              display: inline;
+              float: right;
+              .icon {
+                margin-right: 0.8vw;
+
+                font-weight: bold;
+                opacity: 0.9;
+                font-size: calc(0.5rem + 0.8vw);
+                transition: all 0.3s ease;
+                &:hover {
+                  transform: translate(0, -2px);
+                  color: $white;
+                  transition: all 0.3s ease;
+                  cursor: pointer;
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .footer-out {
+    overflow: hidden;
+    background-color: $bg;
+    width: 100%;
+    .footer-group {
+      background-color: $bg;
+      display: table;
+      height: 12vh;
+      width: 90%;
+      .footer-b {
+        display: table-cell;
+        vertical-align: middle;
+        .footer-content {
+          .footer-brand {
+            h1 {
+              color: white;
+              font-weight: 700;
+              font-size: calc(1rem + 1vw);
+              opacity: 1;
+              transition: all 0.3s ease;
+              .light {
+                font-weight: 200;
+              }
+              &:hover {
+                color: $white;
+                transition: all 0.3s ease;
+                cursor: pointer;
+              }
+            }
+          }
+          .footer-text {
+            color: $grey;
+            // animation: fadeInUp;
+            // animation-duration: 2000ms;
+            ul {
+              margin-top: 0.7vw;
+              li {
+                display: inline;
+                margin-right: 2vw;
+
+                font-weight: bold;
+                opacity: 0.9;
+                font-size: calc(0.1rem + 0.8vw);
+                transition: all 0.3s ease;
+                &:hover {
+                  color: $white;
+                  transition: all 0.3s ease;
+                  cursor: pointer;
+                  opacity: 1;
+                }
+              }
+            }
+          }
+          .footer-icons {
+            color: $white;
+            // animation: fadeInUp;
+            // animation-duration: 2400ms;
+            ul {
+              margin-top: 0.5vw;
+              li {
+                display: inline;
+                float: right;
+                .icon {
+                  margin-right: 0.8vw;
+
+                  font-weight: bold;
+                  opacity: 0.9;
+                  font-size: calc(0.5rem + 0.8vw);
+                  transition: all 0.3s ease;
+                  &:hover {
+                    transform: translate(0, -2px);
+                    color: $white;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

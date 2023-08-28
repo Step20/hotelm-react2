@@ -1,0 +1,73 @@
+.scroll {
+  transition: all 0.3s ease;
+  color: white;
+  width: 70px;
+  height: 70px;
+  opacity: 0.94;
+  background-color: black;
+  border-radius: 1vw;
+  box-shadow: 0 rgba(0, 0, 0, 0);
+  &:hover {
+    transition: all 0.3s ease;
+    color: black;
+    transform: translate(0, -5px);
+    opacity: 1;
+    border-radius: 0px;
+    box-shadow: 1 rgb(85, 217, 190);
+  }
+}
+
+.home-out {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+      88deg,
+      #376b52 3.65%,
+      #006c6c 30.99%,
+      rgba(0, 108, 108, 0) 70%
+    ),
+    linear-gradient(360deg, #000 0%, rgba(0, 0, 0, 0) 100%, #000 100%),
+    url("../assets/hmbg.png"), lightgray 50% / cover no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .home-content {
+    margin-top: -3%;
+    display: table;
+    .home-text {
+      width: 100vw;
+      height: 100vh;
+      display: table-cell;
+      vertical-align: middle;
+      .text-left {
+        color: white;
+        h1 {
+          font-size: calc(2rem + 2vw);
+          font-family: Marko One;
+        }
+        p {
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+            Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+            sans-serif;
+          font-size: calc(0.9rem + 0.2vw);
+          opacity: 0.8;
+          font-weight: 300;
+          width: 40%;
+        }
+        .btn {
+          font-size: calc(1rem + 0.9vw);
+          padding: 0.9vw 8vw 0.9vw 8vw;
+          font-weight: 600;
+          border-radius: 1.5vw;
+          border: 1px solid white;
+          background-color: #ffffff29;
+          &:hover {
+            background-color: #ffffff;
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+}

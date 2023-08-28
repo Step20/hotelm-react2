@@ -1,0 +1,53 @@
+.best {
+  height: 110vh;
+  background: linear-gradient(
+      0deg,
+      rgba(55, 107, 82, 0.11) 0%,
+      rgba(0, 108, 108, 0.11) 0.75%,
+      rgba(0, 108, 108, 0) 40%
+    ),
+    rgb(255, 255, 255) 100% / cover no-repeat;
+  .best-out {
+    height: 100vh;
+    display: table;
+    .best-content {
+      display: table-cell;
+      vertical-align: middle;
+      .row {
+        .left {
+          img {
+            width: 90%;
+            height: 100%;
+            border-radius: 1vw;
+          }
+        }
+        .right {
+          align-items: center;
+          vertical-align: middle;
+          align-self: center;
+          justify-self: center;
+
+          h1 {
+            font-family: Marko One;
+            font-size: calc(2rem + 1vw);
+          }
+          p {
+            font-size: calc(1rem + 0.6vw);
+          }
+          .btn {
+            border-radius: 1vw;
+            font-size: calc(1rem + 0.4vw);
+            padding: 0.9vw 5vw 0.9vw 5vw;
+            font-weight: 500;
+            background-color: black;
+            &:hover {
+              border: 1px solid black;
+              background-color: white;
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+  }
+}

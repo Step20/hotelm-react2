@@ -1,0 +1,105 @@
+.list {
+  height: 10vh;
+
+  .list-content {
+    margin-bottom: 4%;
+    .row {
+      .hbox {
+        margin-top: 5%;
+
+        img {
+          width: 90%;
+          height: calc(10rem + 6vw);
+          border-radius: 1vw;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .top {
+          width: 90%;
+          display: inline-flex;
+
+          h4 {
+            .light {
+              font-weight: 300;
+            }
+          }
+        }
+        p {
+          width: 90%;
+          opacity: 0.85;
+          font-size: calc(0.4rem + 0.6vw);
+          display: -webkit-box;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+        }
+        .btn {
+          font-weight: 500;
+          font-size: calc(1rem + 0.6vw);
+          border-radius: 1vw;
+          width: 90%;
+          padding-top: 0.8vw;
+          padding-bottom: 0.8vw;
+          background-color: white;
+          border: 1px solid black;
+          color: #000;
+          &:hover {
+            background-color: rgb(0, 0, 0);
+            border: 1px solid black;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modalH {
+  .title {
+    h1 {
+      font-family: Marko One;
+      font-size: calc(1rem + 1vw);
+    }
+  }
+  .body {
+    img {
+      border-radius: 1vw;
+      width: 100%;
+      height: calc(10rem + 4vw);
+    }
+    .text {
+      margin-top: 2%;
+      font-size: calc(0.2rem + 1vw);
+    }
+    .type {
+      margin-top: -3%;
+      font-style: italic;
+      font-weight: bold;
+    }
+    .desc {
+    }
+    .price {
+      float: right;
+      font-size: calc(0.6rem + 1vw);
+      .light {
+        font-weight: 300;
+      }
+    }
+  }
+  .book-btn {
+    background-color: #000;
+    font-weight: 500;
+    border-radius: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  .close-btn {
+    background-color: white;
+    border-radius: 1vw;
+    color: #000;
+    border: 1px solid black;
+    font-weight: 500;
+  }
+}
