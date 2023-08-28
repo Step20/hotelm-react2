@@ -2,16 +2,16 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const hotelsRoute = require("./routes/hotels");
 const path = require("path");
+const hotelsRoute = require("./routes/hotels");
 const cookieParser = require("cookie-parser");
 
 const app = express();
 
 //middlewares
 app.use(cors());
-app.use(cookieParser());
 app.use(express.json());
+app.use(cookieParser());
 
 app.use("/api/hotels", hotelsRoute);
 
@@ -26,7 +26,7 @@ mongoose
   });
 
 if (process.env.NODE_ENV === "production") {
-  app.use("/static", express.static(path.join(__dirname, "client/build")));
+  app.use(express.static("client/build"));
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
   });
